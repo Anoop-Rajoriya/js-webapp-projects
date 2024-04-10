@@ -1,0 +1,292 @@
+/* *********************** section 1 *********************** */
+
+.app-container {
+  --primary-green: #48a300;
+  --primary-broun: #61481c;
+  --white: #ffff;
+  --black: #000000;
+  --bluish-white: #fbfbfb;
+  --slat-gray: #858585;
+  --carrot-red: #ff5151;
+  background-color: #48a30012;
+  max-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem 1rem;
+  gap: 2rem;
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 11vw;
+  font-weight: 700;
+  color: var(--primary-green);
+}
+
+.app-container span {
+  color: var(--primary-broun);
+}
+
+main {
+  width: 100%;
+  max-width: 660px;
+  background-color: var(--bluish-white);
+  border-radius: 0.3rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 1.6rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 7vh;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 0.6rem;
+}
+
+.heading > p {
+  font-size: 8vw;
+  font-weight: 700;
+}
+
+.img > img {
+  width: 2rem;
+}
+
+.progress-bar-container > p {
+  font-size: 3.8vw;
+  font-size: 400;
+  color: var(--slat-gray);
+}
+
+.progress-bar {
+  background-color: #48a3001a;
+  min-height: 25px;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  border-radius: 15px;
+}
+
+.progress-bar div {
+  background-color: var(--primary-green);
+  height: 25px;
+  width: 40%;
+  border-radius: inherit;
+  color: #eeffe0;
+  font-size: 2.8vw;
+  display: none;
+  padding-left: 0.8rem;
+}
+.progress-bar div span {
+  color: #eeffe0;
+  font-size: 2.8vw;
+}
+
+.progress-bar.completed div {
+  display: flex;
+  align-items: center;
+}
+
+.app-container .error {
+  color: var(--carrot-red);
+  font-size: 2.8vw;
+  display: none;
+}
+
+.app-container .goals-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.goals-container .goal {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  background-color: var(--white);
+  padding: 0.8rem;
+  border: 1px solid #0000001a;
+  border-radius: 0.2rem;
+}
+
+.goal .check-box {
+  --size: 18px;
+  height: var(--size);
+  width: var(--size);
+  border-radius: 100%;
+  border: 2px solid #61481c4d;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.goal > input {
+  padding-left: 1rem;
+  flex-grow: 1;
+  height: 100%;
+  font-family: poppin, sans-serif;
+  border: none;
+  outline: none;
+  color: var(--black);
+  font-size: 3.8vw;
+  font-weight: 500;
+}
+
+.goal.completed > .check-box {
+  background-color: var(--primary-green);
+  border-color: var(--primary-green);
+}
+.goal.completed > input {
+  color: var(--primary-green);
+  text-decoration: line-through;
+}
+
+.goal > input::placeholder {
+  text-decoration: none;
+  color: #d9d9d9;
+}
+
+main > .line {
+  font-size: 3.8vw;
+  font-weight: 500;
+  color: black;
+  text-align: center;
+}
+
+main > .author-name {
+  font-size: 2.6vw;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* *********************** section 2 *********************** */
+
+@media (min-width: 500px) {
+  .app-container {
+    gap: 5rem;
+  }
+  header {
+    font-size: 6.5vw;
+  }
+
+  main {
+    gap: 8vh;
+  }
+
+  .heading > p {
+    font-size: 4vw;
+  }
+
+  .progress-bar-container > p {
+    font-size: 2.5vw;
+  }
+
+  .progress-bar {
+    margin-bottom: 1rem;
+  }
+
+  .progress-bar div {
+    font-size: 2vw;
+  }
+  .progress-bar div span {
+    font-size: 2vw;
+  }
+
+  .app-container .error {
+    font-size: 2vw;
+  }
+
+  .goals-container .goal {
+    border-radius: 0.4rem;
+  }
+
+  .goal .check-box {
+    --size: 24px;
+    font-size: 2.5vw;
+  }
+
+  .goal > input {
+    font-size: 2.5vw;
+  }
+
+  main > .line {
+    font-size: 2.5vw;
+  }
+
+  main > .author-name {
+    font-size: 1.8vw;
+  }
+}
+
+/* *********************** section 3 *********************** */
+
+@media (min-width: 1000px) {
+  .app-container {
+    gap: 2.5rem;
+  }
+
+  header {
+    font-size: 5vw;
+  }
+
+  main {
+    border-radius: 1rem;
+  }
+
+  .heading > p {
+    font-size: 2.6vw;
+  }
+
+  .progress-bar-container > p {
+    font-size: 1.6vw;
+  }
+
+  .progress-bar {
+    margin-bottom: 1rem;
+  }
+
+  .progress-bar div {
+    font-size: 1.15vw;
+  }
+
+  .progress-bar div span {
+    font-size: 1.15vw;
+  }
+
+  .app-container .error {
+    font-size: 1.15vw;
+  }
+
+  .goals-container .goal {
+    border-radius: 0.4rem;
+  }
+
+  .goal .check-box {
+    --size: 24px;
+    font-size: 1.6vw;
+  }
+
+  .goal > input {
+    font-size: 1.6vw;
+  }
+
+  main > .line {
+    font-size: 1.6vw;
+  }
+
+  main > .author-name {
+    font-size: 1vw;
+  }
+}
