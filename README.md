@@ -12,16 +12,18 @@ This repo contains my javascript practice projects. in this repo we will describ
 
 ## project name with screenshot
 - Focus on Today
-- [img]()
+- [img](./Focus%20on%20Today%20webapp/assets/Screenshot%202024-04-11%20Focus%20on%20Today%20app.png)
 
 ## projects name list with compeletion time
 | project name | competion Time |
 | ------------ | -------------- |
-| Focus on Today | |
+| Focus on Today | 11 april 2024 |
 
 
 ## live demo links with code
-
+| project name | project live |
+| ------------ | -------------- |
+| Focus on Today | [focus-on-today]() |
 
 ## author name
 - [Anoop Rajoriya]()
