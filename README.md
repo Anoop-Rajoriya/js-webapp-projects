@@ -12,7 +12,7 @@ This repo contains my javascript practice projects. in this repo we will describ
 
 ## project name with screenshot
 - Focus on Today
-- [img](./Focus%20on%20Today%20webapp/assets/Screenshot%202024-04-11%20Focus%20on%20Today%20app.png)
+- ![img](./Focus%20on%20Today%20webapp/assets/Screenshot%202024-04-11%20Focus%20on%20Today%20app.png)
 
 ## projects name list with compeletion time
 | project name | competion Time |
