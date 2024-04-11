@@ -23,7 +23,7 @@ This repo contains my javascript practice projects. in this repo we will describ
 ## live demo links with code
 | project name | project live |
 | ------------ | -------------- |
-| Focus on Today | [focus-on-today]() |
+| Focus on Today | [focus-on-today](https://anoop-rajoriya.github.io/js-webapp-projects/Focus%20on%20Today%20webapp/) |
 
 ## author name
 - [Anoop Rajoriya]()
