@@ -1,0 +1,414 @@
+/* ********************************* code-divider state classes ********************************* */
+
+.app-wraper.time-100 {
+  background-color: #CCE2C2;
+}
+.app-wraper.time-100 .question-timer {
+  background-color: #02a40abc;
+}
+.app-wraper.time-100 .next {
+  color: #02A409;
+}
+.app-wraper.time-50 {
+  background-color: #E4E5C7;
+}
+.app-wraper.time-50 .question-timer {
+  background-color: #C5B1006E;
+}
+.app-wraper.time-50 .next {
+  color: #C58800;
+}
+.app-wraper.time-15 {
+  background-color: #DBADAD;
+}
+.app-wraper.time-15 .question-timer {
+  background-color: #C50C006E;
+}
+.app-wraper.time-15 .next {
+  color: #C50000;
+}
+
+.option-container .option.currect {
+  border-color: rgba(2, 164, 10, 0.5);
+}
+.option-container .option.wrong {
+  border-color: rgba(255, 0, 0, 0.5);
+}
+.option.wrong span {
+  color: red;
+  border: 1px solid;
+}
+.option.wrong .choise p {
+  visibility: visible;
+}
+.option.currect span {
+  color: white;
+  background-color: #02a409;
+}
+
+/* ********************************* code-divider mobile view ********************************* */
+
+.app-wraper {
+  max-width: 100vw;
+  min-height: 100vh;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+header {
+  min-height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.logo img {
+  max-width: 222px;
+  width: 40%;
+}
+
+main {
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+main .section1 {
+  min-height: 45%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+
+main .section2 {
+  min-height: 55%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+main .audio {
+  width: 12vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 50%;
+  margin-inline-start: auto;
+}
+
+.audio img {
+  width: 100%;
+}
+
+main .question-counter {
+  background-color: #fec33d;
+  width: max-content;
+  padding: 3px 6px;
+  font-size: 6.5vw;
+  font-weight: 600;
+  border-radius: 5px;
+  margin-inline-start: auto;
+}
+
+main .question-container {
+  min-height: 80px;
+  font-size: 4.2vw;
+  font-weight: 600;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+main .question-timer {
+  width: max-content;
+  padding: 3px 6px;
+  font-size: 6.5vw;
+  font-weight: 600;
+  border-radius: 5px;
+  color: white;
+  margin-inline-start: auto;
+}
+
+main .option-container {
+  background-color: #f5f5f5;
+  font-size: 4.2vw;
+  font-weight: 600;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.option + .option {
+  margin-top: 16px;
+}
+
+.option-container .option {
+  border: 3px solid #d9d9d9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.option .choise {
+  font-size: 3.5vw;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.choise p {
+  visibility: hidden;
+}
+
+.choise span {
+  height: 20px;
+  width: 20px;
+  font-size: 20px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.next {
+  max-width: max-content;
+  font-size: 6vw;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding: 4px;
+  margin-inline-start: auto;
+  cursor: pointer;
+}
+
+.next:active {
+  text-decoration-line: underline;
+}
+
+footer {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  height: 5%;
+  font-size: 2vw;
+  font-weight: 500;
+  color: #858585;
+}
+
+@media (min-height: 750px) {
+  main .option-container {
+    padding: 36px 12px;
+  }
+
+  .option + .option {
+    margin-top: 26px;
+  }
+
+  .next {
+    margin-top: 10px;
+  }
+}
+
+/* ********************************* code-divider tablet viwe ********************************* */
+
+@media (min-width: 470px) {
+
+  main .section2 {
+    margin-top: 40px;
+  }
+  main {
+    padding: 20px;
+  }
+
+  main .audio {
+    width: 7vw;
+  }
+
+  main .question-counter {
+    font-size: 5vw;
+    border-radius: 10px;
+  }
+
+  main .question-container {
+    font-size: 4vw;
+  }
+
+  main .question-timer {
+    font-size: 5vw;
+    border-radius: 10px;
+  }
+
+  main .option-container {
+    font-size: 3.8vw;
+  }
+
+  .option + .option {
+    margin-top: 20px;
+  }
+
+  .option .choise {
+    font-size: 3vw;
+  }
+
+  .choise span {
+    height: 35px;
+    width: 35px;
+    font-size: 36px;
+  }
+
+  .next {
+    font-size: 4vw;
+  }
+
+  footer {
+    font-size: 2.5vw;
+  }
+}
+
+@media (min-width: 800px) {
+
+  .logo img {
+    width: 35%;
+  }
+
+  main {
+    padding: 20px 40px;
+  }
+
+  main .audio {
+    width: 5.6vw;
+  }
+
+  main .question-counter {
+    font-size: 4.4vw;
+  }
+
+  main .question-container {
+    font-size: 3.3vw;
+    border-radius: 12px;
+  }
+
+  main .question-timer {
+    font-size: 4.4vw;
+  }
+
+  main .option-container {
+    font-size: 2.8vw;
+        border-radius: 12px;
+  }
+
+  .option + .option {
+    margin-top: 18px;
+  }
+
+  .option .choise {
+    font-size: 2.2vw;
+  }
+
+  .choise span {
+    height: 30px;
+    width: 30px;
+    font-size: 30px;
+  }
+
+  .next {
+    font-size: 3.4vw;
+  }
+
+  footer {
+    font-size: 2vw;
+  }
+}
+
+/* ********************************* code-divider laptop view ********************************* */
+
+@media (min-width: 1000px) {
+
+
+  .app-wraper {
+    padding: 10px 10vw;
+  }
+
+  .logo img {
+    width: 10vw;
+  }
+
+  main {
+    padding: 10px 20px;
+  }
+
+  main .audio {
+    width: 2.6vw;
+  }
+
+  main .question-counter {
+    font-size: 1.6vw;
+  }
+
+  main .question-container {
+    min-height: 60px;
+    font-size: 1.3vw;
+    border-radius: 12px;
+  }
+
+  main .question-timer {
+    font-size: 1.6vw;
+  }
+
+  main .option-container {
+    font-size: 1.2vw;
+        border-radius: 12px;
+  }
+
+  .option + .option {
+    margin-top: 18px;
+  }
+
+  .option-container .option {
+        padding: 6px;
+    }
+
+  .option .choise {
+    font-size: 1vw;
+  }
+
+  .choise span {
+    height: 24px;
+    width: 24px;
+    font-size: 24px;
+  }
+
+  .next {
+    font-size: 24px;
+  }
+
+  footer {
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .app-wraper {
+    padding: 10px 20vw;
+  }
+}

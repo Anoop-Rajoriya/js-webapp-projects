@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- https://www.figma.com/file/BzNsm1i2Mn2vhhx3iuFvrg/Quiz-Time?type=design&node-id=0-1&mode=design&t=KPRI2UvZ2GEXXZrv-0 -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/result.css" />
+    <title>result</title>
+  </head>
+  <body>
+    <div class="result-container">
+      <header>
+        <img src="../assets/Group 4.svg" alt="logo" />
+        <h1>result</h1>
+      </header>
+      <main>
+        <div class="chart-container">
+          <div class="outer-progress">
+            <div class="inner-progress">
+              <span>20</span> /25
+            </div>
+          </div>
+          <span class="green">70%</span>
+          <span class="red">30%</span>
+        </div>
+        <p>“Keep learning, you have a good score!”</p>
+        <a href="#">&lt;&lt;Retry</a>
+      </main>
+      <footer>
+        <div class="share-elm">
+          <p>Share your score:</p>
+          <div class="svg-container">
+            <img src="../assets/Instagram Square_.svg" alt="Instagram logo" />
+            <img src="../assets/LinkedIn Square_.svg" alt="LinkedIn logo" />
+            <img src="../assets/Twitter Square_.svg" alt="Twitter logo" />
+          </div>
+        </div>
+        <p>Made with ❤️ by Anoop Rajoriya</p>
+      </footer>
+    </div>
+    <script>
+
+      
+function mapNumber(number) {
+    // Ensure the input number is within the range [0, 360]
+    number = number % 360;
+    if (number < 0) {
+        number += 360;
+    }
+
+    // Map the number to the desired output range
+    if (number <= 180) {
+        // Map the number from [0, 180] to [90, 0]
+        return 90 - (number * (90 / 180));
+    } else {
+        // Map the number from (180, 360] to [0, -90]
+        return - (number - 180) * (90 / 180);
+    }
+}
+      function progress(val) {
+
+
+        let number = Math.min(Math.max(val, 0), 100);
+        number = (number / 100) * 360;
+
+        const root = document.querySelector('.outer-progress');
+        // console.log(val, mapNumber(number));
+        
+        root.style.setProperty("--progress-size", number)
+        root.style.setProperty("--progress-move", mapNumber(number))
+      }
+    </script>
+  </body>
+</html>

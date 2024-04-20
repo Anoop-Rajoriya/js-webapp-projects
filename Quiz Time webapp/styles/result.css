@@ -1,0 +1,327 @@
+/* ********************************* code-divider mobile view ********************************* */
+
+.result-container {
+  background-color: #f6f4f0;
+  max-width: 100vw;
+  min-height: 100vh;
+}
+
+.result-container header {
+  min-height: 15vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.result-container main {
+  min-height: 70vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.result-container footer {
+  min-height: 15vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+header img {
+  width: 32vw;
+}
+
+header img + h1 {
+  font-size: 5vw;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+footer .share-elm {
+  margin-bottom: 10px;
+}
+footer .share-elm p {
+  color: #535353;
+  font-weight: 600;
+  font-size: 4.8vw;
+}
+
+footer .share-elm .svg-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+footer .share-elm .svg-container img {
+  height: 30px;
+  width: 30px;
+  border-radius: 8px;
+}
+
+footer .share-elm .svg-container img:active {
+  border: 2px solid #535353;
+}
+
+footer p {
+  color: #858585;
+  font-weight: 500;
+  font-size: 3.3vw;
+}
+
+main > p {
+  font-weight: 600;
+  font-size: 4.6vw;
+  margin-top: 25px;
+}
+
+main a {
+  color: #ffffff;
+  font-weight: 600;
+  background-color: #35bd3a;
+  padding: 8px 28px;
+  padding-left: 24px;
+  border-radius: 6px;
+  border: 3px solid transparent;
+  border-right-color: #01ab08;
+  border-bottom-color: #01ab08;
+  margin-top: 10px;
+}
+
+/* ********************************* code-divider  ********************************* */
+.chart-container {
+  width: 280px;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.chart-container > span {
+  display: flex;
+  align-items: end;
+  height: 70px;
+  width: 70px;
+  font-weight: 600;
+  font-size: 15px;
+  position: absolute;
+
+  transform: translateY(-10%);
+  top: 50%;
+}
+
+.chart-container > .green {
+  --color: #009006;
+  justify-content: start;
+  left: 0;
+}
+
+.chart-container > .red {
+  --color: #eb4545;
+  justify-content: end;
+  right: 0;
+}
+
+.chart-container > span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 50%;
+  height: 50%;
+}
+
+.chart-container > span::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.chart-container > .green::after {
+  border: 2px solid var(--color);
+  top: 6px;
+  left: 12px;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+}
+
+.chart-container > .green::before {
+  background-color: var(--color);
+
+  top: 2.1px;
+  right: 14.5px;
+}
+.chart-container > .red::after {
+  border: 2px solid var(--color);
+  top: 6px;
+  left: 12px;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+
+.chart-container > .red::before {
+  background-color: var(--color);
+
+  top: 2.1px;
+  left: 11.5px;
+}
+
+.chart-container .outer-progress {
+  --progress-size: 90;
+  --progress-move: 45;
+  background-color: lightblue;
+  height: 70%;
+  width: 70%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: conic-gradient(
+    from calc(var(--progress-move) * 1deg),
+    #ff7a7a calc(var(--progress-size) * 1deg),
+    #35bd3a calc(var(--progress-size) * 1deg)
+  );
+}
+
+.inner-progress {
+  width: 70%;
+  height: 70%;
+  background-color: #f6f4f0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+/* ********************************* code-divider tablet view ********************************* */
+
+@media (min-width: 500px) {
+  header img {
+    width: 28vw;
+  }
+
+  header img + h1 {
+    font-size: 3.5vw;
+  }
+
+  footer .share-elm p {
+    font-size: 3.8vw;
+  }
+
+  footer .share-elm .svg-container img {
+    height: 50px;
+    width: 50px;
+  }
+
+  footer p {
+    font-size: 1.8vw;
+  }
+
+  main > p {
+    font-size: 3.6vw;
+  }
+
+  main a {
+    border-radius: 12px;
+    font-size: 4vw;
+  }
+
+  /* ********************************* code-divider  ********************************* */
+  .chart-container {
+    width: 380px;
+    height: 380px;
+  }
+
+  .chart-container > span {
+    font-size: 20px;
+  }
+
+  .chart-container > .green {
+    left: 10px;
+  }
+
+  .chart-container > .red {
+    right: 10px;
+  }
+
+  .chart-container > .green::after {
+    left: 14px;
+  }
+
+  .chart-container > .red::after {
+    left: 8px;
+  }
+
+  .inner-progress {
+    font-size: 30px;
+  }
+}
+
+/* ********************************* code-divider laptop view ********************************* */
+
+@media (min-width: 950px) {
+  header img {
+    width: 10vw;
+  }
+
+  header img + h1 {
+    font-size: 1.6vw;
+  }
+
+  footer .share-elm p {
+    font-size: 1.6vw;
+  }
+
+  footer .share-elm .svg-container img {
+    height: 32px;
+    width: 32px;
+  }
+
+  footer p {
+    font-size: 1vw;
+  }
+
+  main > p {
+    font-size: 2vw;
+  }
+
+  main a {
+    border-radius: 12px;
+
+    font-size: 1.8vw;
+  }
+
+  /* ********************************* code-divider  ********************************* */
+  .chart-container {
+    width: 300px;
+    height: 300px;
+  }
+
+  .chart-container > span {
+    font-size: 16px;
+  }
+
+  .chart-container > .green {
+    left: 0;
+  }
+
+  .chart-container > .red {
+    right: 0;
+  }
+
+  .chart-container > .green::after {
+    left: 12px;
+  }
+
+  .chart-container > .red::after {
+    left: 12px;
+  }
+
+  .inner-progress {
+    font-size: 20px;
+  }
+}
