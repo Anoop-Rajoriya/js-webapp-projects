@@ -13,6 +13,8 @@ const nextElm = document.querySelector(".next");
 
 let showAnsTimeout;
 let canNext = false;
+let timeCount = 30;
+let timerFlage;
 
 if (!localStorage.quizeData) {
     try {
@@ -60,6 +62,8 @@ function gameStart(params) {
 }
 
 function checkUserAns(params) {
+    startTimer(false);
+
     if (
         params.target.innerText ==
         atob(quizeData.queArr[quizeData.gameCount].ans)
@@ -92,10 +96,9 @@ function checkUserAns(params) {
 }
 
 function nextLevel(params) {
-    console.log('hello');
+    if (!canNext) return;
     nextElm.removeEventListener("click", nextLevel, false);
     clearTimeout(showAnsTimeout);
-    if (!canNext) return;
     canNext = false;
     quizeData.gameCount++;
     if (quizeData.gameCount <= 24) {
@@ -110,6 +113,8 @@ function updateQuesAndAns(params) {
         e.classList.remove("currect");
         e.classList.remove("wrong");
     });
+
+    startTimer(true);
 
     if (quizeData.gameCount <= 24) {
         appCounter.firstElementChild.innerText = quizeData.gameCount + 1;
@@ -126,10 +131,46 @@ function updateQuesAndAns(params) {
             else option.innerText = "option not available!";
         });
     } else {
-        gameEnd()
+        gameEnd();
     }
 }
 
 function gameEnd(params) {
     console.log("game end !!!!!");
+}
+
+function startTimer(params) {
+    if (params) {
+        appTimer.innerText = `00:00`
+        timerFlage = setInterval((e) => {
+            if (timeCount >= 0) {
+                // console.log(`00:${timeCount}`);
+                appTimer.innerText = `00:${timeCount}`;
+                timeCount--;
+                return;
+            }
+            console.log("self clear!!");
+            showAnsTimeout = setTimeout((e) => {
+                optionElmArr.forEach((e) => {
+                    e.classList.remove("currect");
+                    e.classList.remove("wrong");
+                });
+        
+                optionElmArr.forEach((e) => {
+                    if (e.innerText !== atob(quizeData.queArr[quizeData.gameCount].ans))
+                        e.classList.add("wrong");
+                    else e.classList.add("currect");
+                });
+            }, 800);    
+            // appTimer.innerText = `00:00`;
+            timeCount = 30;
+            clearInterval(timerFlage);
+        }, 1000);
+    }
+    else{
+        console.log("user clear!!");
+        // appTimer.innerText = `00:00`;
+        timeCount = 30;
+        clearInterval(timerFlage);
+    }
 }

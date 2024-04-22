@@ -165,6 +165,7 @@ main .option-container {
   justify-content: space-between;
   padding: 10px;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .option .choise {
