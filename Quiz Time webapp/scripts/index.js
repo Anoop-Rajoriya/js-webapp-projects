@@ -10,7 +10,7 @@ window.onload = () => {
             // elm.innerText = JSON.parse(localStorage.quizeData).correctAns;
             const score = JSON.parse(localStorage.quizeData).correctAns / 25 * 100
             console.log(score);
-            elm.innerText = `highest score: ${score}`;
+            elm.innerText = `Your score: ${score}`;
             // ((correctAns / totleQue) * 100).toFixed(1)
             elm.style.visibility = "visible";
         }
