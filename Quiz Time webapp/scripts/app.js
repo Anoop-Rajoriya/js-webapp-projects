@@ -10,11 +10,19 @@ const optionElmArr = document.querySelectorAll(".option");
 const appCounter = document.querySelector(".question-counter");
 const appTimer = document.querySelector(".question-timer");
 const nextElm = document.querySelector(".next");
+const app = document.querySelector(".app-wraper");
+const muteButton = document.querySelector(".audio");
 
 let showAnsTimeout;
 let canNext = false;
 let timeCount = 30;
 let timerFlage;
+let isMuted = false;
+
+// const clockAudio = new Audio('../assets/audio/clock-tic-tic.mp3');
+const correctAudio = new Audio("../assets/audio/currect.mp3");
+const wrongAudio = new Audio("../assets/audio/wrong.mp3");
+const nextAudio = new Audio("../assets/audio/next-click.mp3");
 
 if (!localStorage.quizeData) {
     try {
@@ -67,13 +75,12 @@ function checkUserAns(params) {
         params.target.innerText ==
         atob(quizeData.queArr[quizeData.gameCount].ans)
     ) {
-        // console.log('currect ans');
+        playSound("PlayCorrectAnsSound");
+
         params.target.classList.add("currect");
         quizeData.correctAns++;
-        // console.log(quizeData.correctAns);
-
     } else {
-        // console.log('wrong ans')
+        playSound("PlayWrongAnsSound");
         params.target.classList.add("wrong");
     }
 
@@ -98,15 +105,14 @@ function checkUserAns(params) {
 }
 
 function nextLevel(params) {
-    // console.log(quizeData.gameCount);
-    // console.log('nextLevel click!!')
+    playSound("PlayNextButtonSound");
     quizeData.isPlayer = true;
-    localStorage.setItem('quizeData', JSON.stringify(quizeData))
-    // console.log(JSON.parse(localStorage.getItem('quizeData')));
-
+    localStorage.setItem("quizeData", JSON.stringify(quizeData));
     if (!canNext) return;
     nextElm.removeEventListener("click", nextLevel, false);
     clearTimeout(showAnsTimeout);
+    app.classList.add("time-100");
+    app.classList.remove("time-15");
     canNext = false;
     quizeData.gameCount++;
     if (quizeData.gameCount <= 24) {
@@ -144,46 +150,86 @@ function updateQuesAndAns(params) {
 }
 
 function gameEnd(params) {
-    setTimeout(()=> {
+    setTimeout(() => {
         console.log("game end !!!!!");
-        window.location.replace('http://127.0.0.1:5500/Quiz%20Time%20webapp/routs/result.html')
-    }, 500)
+        window.location.replace(
+            "http://127.0.0.1:5500/Quiz%20Time%20webapp/routs/result.html"
+        );
+    }, 500);
 }
 
 function startTimer(params) {
     if (params) {
-        appTimer.innerText = `00:00`
+        appTimer.innerText = `00:00`;
+        app.classList.add("time-100");
+        app.classList.remove("time-50");
+        app.classList.remove("time-15");
+
         timerFlage = setInterval((e) => {
             if (timeCount >= 0) {
-                // console.log(`00:${timeCount}`);
+                if (timeCount <= 15 && timeCount > 5) {
+                    // console.log("hurry up !!!");
+                    app.classList.add("time-50");
+                    app.classList.remove("time-100");
+                } else if (timeCount <= 5 && timeCount >= 0) {
+                    // console.log("damm it !!!");
+                    app.classList.add("time-15");
+                    app.classList.remove("time-50");
+                }
                 appTimer.innerText = `00:${timeCount}`;
                 timeCount--;
                 return;
             }
-            // console.log("self clear!!");
+
             showAnsTimeout = setTimeout((e) => {
                 optionElmArr.forEach((e) => {
                     e.classList.remove("currect");
                     e.classList.remove("wrong");
                 });
-        
+
                 optionElmArr.forEach((e) => {
-                    if (e.innerText !== atob(quizeData.queArr[quizeData.gameCount].ans))
+                    if (
+                        e.innerText !==
+                        atob(quizeData.queArr[quizeData.gameCount].ans)
+                    )
                         e.classList.add("wrong");
                     else e.classList.add("currect");
                 });
 
                 canNext = true;
-            }, 800);    
+            }, 800);
             // appTimer.innerText = `00:00`;
             timeCount = 30;
             clearInterval(timerFlage);
-        }, 1000);
-    }
-    else{
+        }, 500);
+    } else {
         // console.log("user clear!!");
         // appTimer.innerText = `00:00`;
         timeCount = 30;
         clearInterval(timerFlage);
     }
 }
+
+function playSound(params) {
+    if (!isMuted) {
+        if (params == "PlayCorrectAnsSound") {
+            correctAudio.play();
+        } else if (params == "PlayWrongAnsSound") {
+            wrongAudio.play();
+        } else if (params == "PlayNextButtonSound") {
+            nextAudio.play();
+        }
+    }
+}
+
+function playSoundEventHandler(params) {
+    // muteButton.removeEventListener("click", playSoundEventHandler, false);
+    isMuted = !isMuted;
+
+    if (isMuted) muteButton.firstElementChild.src = "../assets/icon _Volume Mute_.svg";
+    else muteButton.firstElementChild.src = "../assets/icon _Volume Up_.svg";
+
+    // console.log("is muted: ", isMuted);
+}
+
+muteButton.addEventListener("click", playSoundEventHandler, false);

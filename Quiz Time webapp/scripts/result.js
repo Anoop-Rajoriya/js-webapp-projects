@@ -42,3 +42,18 @@ document.querySelector('main button').addEventListener('click', e=> {
     localStorage.clear();
     location.replace('http://127.0.0.1:5500/Quiz%20Time%20webapp')
 })
+
+
+const data = {
+    title: 'Quize time webApp',
+    description: 'click url and see my score!!',
+    url: 'http://127.0.0.1:5500/Quiz%20Time%20webapp/routs/result.html'
+}
+document.querySelector('.share-elm').addEventListener('click', async (e)=> {
+    try {
+        await navigator.share(data);
+    } catch (error) {
+        console.log(error);
+    }
+    console.log('share clicked');
+})
