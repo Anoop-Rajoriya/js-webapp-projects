@@ -16,7 +16,7 @@
     width: 100%;
 }
 
-.app-wraper a {
+.app-wraper button {
 
     background-color: #35BD3A;
 
@@ -26,9 +26,9 @@
 
     padding: 10px 25px;
     border-radius: 8px;
-
-    border-bottom: 8px solid rgba(1, 171, 7);
-    border-right: 8px solid rgba(1, 171, 7);
+    border: 2px solid transparent;
+    border-right-color: rgba(1, 171, 7);
+    border-bottom-color: rgba(1, 171, 7);
 
     margin: 10px;
     margin-top: 25px;
@@ -36,7 +36,14 @@
     cursor: pointer;
 }
 
-.app-wraper a+p {
+.app-wraper button:hover{
+    border-left-color: rgba(1, 171, 7);
+    border-top-color: rgba(1, 171, 7);
+    color: #35BD3A;
+    background-color: transparent;
+}
+
+.app-wraper button+p {
     font-size: 4.5vw;
     font-weight: 600;
     text-transform: capitalize;
@@ -45,7 +52,7 @@
     visibility: hidden;
 }
 
-.app-wraper a+p+p {
+.app-wraper button+p+p {
     font-size: 2vw;
     font-weight: 500;
     color: #858585;
@@ -60,18 +67,18 @@
         width: 95%;
     }
 
-    .app-wraper a {
+    .app-wraper button {
         font-size: 7vw;
         padding: 20px 35px;
         border-radius: 20px;
     }
 
-    .app-wraper a+p {
+    .app-wraper button+p {
         font-size: 4vw;
         margin-top: 200px;
     }
 
-    .app-wraper a+p+p {
+    .app-wraper button+p+p {
         font-size: 2.5vw;
         margin-top: 30px;
     }
@@ -86,17 +93,17 @@
         width: 46%;
     }
 
-    .app-wraper a {
+    .app-wraper button {
         font-size: 2.6vw;
         margin-top: 10px;
     }
 
-    .app-wraper a+p {
+    .app-wraper button+p {
         font-size: 1.6vw;
         margin-top: 100px;
     }
 
-    .app-wraper a+p+p {
+    .app-wraper button+p+p {
         font-size: .9vw;
         margin-top: 10px;
     }

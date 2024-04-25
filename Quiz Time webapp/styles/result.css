@@ -75,7 +75,7 @@ main > p {
   margin-top: 25px;
 }
 
-main a {
+main button {
   color: #ffffff;
   font-weight: 600;
   background-color: #35bd3a;
@@ -86,6 +86,13 @@ main a {
   border-right-color: #01ab08;
   border-bottom-color: #01ab08;
   margin-top: 10px;
+  transition: border 400ms ease-in-out;
+}
+main button:hover {
+  background-color: transparent;
+  color: #35bd3a;
+  border-left-color: #01ab08;
+  border-top-color: #01ab08;
 }
 
 /* ********************************* code-divider  ********************************* */
@@ -170,8 +177,8 @@ main a {
 }
 
 .chart-container .outer-progress {
-  --progress-size: 90;
-  --progress-move: 45;
+  --progress-size: 180;
+  --progress-move: 0;
   background-color: lightblue;
   height: 70%;
   width: 70%;
@@ -225,7 +232,7 @@ main a {
     font-size: 3.6vw;
   }
 
-  main a {
+  main button {
     border-radius: 12px;
     font-size: 4vw;
   }
@@ -289,7 +296,7 @@ main a {
     font-size: 2vw;
   }
 
-  main a {
+  main button {
     border-radius: 12px;
 
     font-size: 1.8vw;

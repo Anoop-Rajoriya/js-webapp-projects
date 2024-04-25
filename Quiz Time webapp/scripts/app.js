@@ -1,8 +1,8 @@
 let quizeData = {
     queArr: [],
     isPlayer: false,
-    score: "0",
     gameCount: 0,
+    correctAns: 0,
 };
 
 const questionElm = document.querySelector(".question-container");
@@ -24,7 +24,7 @@ if (!localStorage.quizeData) {
             .then((res) => res.json())
             .then(fetchData);
     } catch (error) {
-        console.log(error, "please reload page data not fetched!");
+        // console.log(error, "please reload page data not fetched!");
     }
 } else fetchData();
 
@@ -63,13 +63,15 @@ function gameStart(params) {
 
 function checkUserAns(params) {
     startTimer(false);
-
     if (
         params.target.innerText ==
         atob(quizeData.queArr[quizeData.gameCount].ans)
     ) {
         // console.log('currect ans');
         params.target.classList.add("currect");
+        quizeData.correctAns++;
+        // console.log(quizeData.correctAns);
+
     } else {
         // console.log('wrong ans')
         params.target.classList.add("wrong");
@@ -91,11 +93,17 @@ function checkUserAns(params) {
             else e.classList.add("currect");
         });
     }, 800);
-
+    // quizeData.score = ((quizeData.correctAns / 25) * 100).toFixed(2)
     canNext = true;
 }
 
 function nextLevel(params) {
+    // console.log(quizeData.gameCount);
+    // console.log('nextLevel click!!')
+    quizeData.isPlayer = true;
+    localStorage.setItem('quizeData', JSON.stringify(quizeData))
+    // console.log(JSON.parse(localStorage.getItem('quizeData')));
+
     if (!canNext) return;
     nextElm.removeEventListener("click", nextLevel, false);
     clearTimeout(showAnsTimeout);
@@ -136,7 +144,10 @@ function updateQuesAndAns(params) {
 }
 
 function gameEnd(params) {
-    console.log("game end !!!!!");
+    setTimeout(()=> {
+        console.log("game end !!!!!");
+        window.location.replace('http://127.0.0.1:5500/Quiz%20Time%20webapp/routs/result.html')
+    }, 500)
 }
 
 function startTimer(params) {
@@ -149,7 +160,7 @@ function startTimer(params) {
                 timeCount--;
                 return;
             }
-            console.log("self clear!!");
+            // console.log("self clear!!");
             showAnsTimeout = setTimeout((e) => {
                 optionElmArr.forEach((e) => {
                     e.classList.remove("currect");
@@ -161,6 +172,8 @@ function startTimer(params) {
                         e.classList.add("wrong");
                     else e.classList.add("currect");
                 });
+
+                canNext = true;
             }, 800);    
             // appTimer.innerText = `00:00`;
             timeCount = 30;
@@ -168,7 +181,7 @@ function startTimer(params) {
         }, 1000);
     }
     else{
-        console.log("user clear!!");
+        // console.log("user clear!!");
         // appTimer.innerText = `00:00`;
         timeCount = 30;
         clearInterval(timerFlage);
