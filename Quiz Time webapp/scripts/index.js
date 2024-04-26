@@ -22,5 +22,8 @@ window.onload = () => {
 
 document.querySelector('.app-wraper button').addEventListener('click', e=> {
     console.log('click');
-    location.replace('https://anoop-rajoriya.github.io/js-webapp-projects/Quiz%20Time%20webapp/routs/app.html')
+    const host = location.origin;
+    const rout = host + location.pathname + 'routs/app.html'
+    console.log(rout);
+    location.replace(rout)
 })

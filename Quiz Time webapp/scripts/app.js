@@ -152,9 +152,10 @@ function updateQuesAndAns(params) {
 function gameEnd(params) {
     setTimeout(() => {
         console.log("game end !!!!!");
-        window.location.replace(
-            "https://anoop-rajoriya.github.io/js-webapp-projects/Quiz%20Time%20webapp/routs/result.html"
-        );
+        const host = location.origin;
+        const rout = host + location.pathname.replace("app.html", 'result.html')
+        console.log(rout);
+        location.replace(rout)
     }, 500);
 }
 

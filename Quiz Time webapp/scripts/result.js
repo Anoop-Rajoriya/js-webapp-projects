@@ -43,10 +43,11 @@ document.querySelector('.inner-progress').innerText = `${correctAns}/${totleQue}
 
 document.querySelector('main button').addEventListener('click', e=> {
     localStorage.clear();
-    location.replace('https://anoop-rajoriya.github.io/js-webapp-projects/Quiz%20Time%20webapp/')
+    const host = location.origin;
+    const rout = host + location.pathname.replace('routs/result.html', '')
+    console.log(rout);
+    location.replace(rout)
 })
-
-
 
 
 
