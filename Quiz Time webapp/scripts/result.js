@@ -25,11 +25,13 @@ function progress(val) {
     root.style.setProperty("--progress-move", mapNumber(number));
 }
 
-
-const totleQue = JSON.parse(localStorage.getItem("quizeData")).gameCount + 1;
+if(localStorage.getItem('quizeData')) 
+{
+    const totleQue = JSON.parse(localStorage.getItem("quizeData")).gameCount + 1;
 const correctAns = JSON.parse(localStorage.getItem("quizeData")).correctAns
 console.log('your rank is: ', ((correctAns / totleQue) * 100).toFixed(2));
 const score =  ((correctAns / totleQue) * 100).toFixed(1);
+
 
 progress(100 - score)
 
@@ -37,23 +39,14 @@ document.querySelector(".green") .innerText = (Math.round(score) + "%");
 document.querySelector(".red") .innerText = (Math.round(100 - score) + "%");
 document.querySelector('.inner-progress').innerText = `${correctAns}/${totleQue}`
 
+}
 
 document.querySelector('main button').addEventListener('click', e=> {
     localStorage.clear();
-    location.replace('http://127.0.0.1:5500/Quiz%20Time%20webapp')
+    location.replace('https://anoop-rajoriya.github.io/js-webapp-projects/Quiz%20Time%20webapp/')
 })
 
 
-const data = {
-    title: 'Quize time webApp',
-    description: 'click url and see my score!!',
-    url: 'http://127.0.0.1:5500/Quiz%20Time%20webapp/routs/result.html'
-}
-document.querySelector('.share-elm').addEventListener('click', async (e)=> {
-    try {
-        await navigator.share(data);
-    } catch (error) {
-        console.log(error);
-    }
-    console.log('share clicked');
-})
+
+
+

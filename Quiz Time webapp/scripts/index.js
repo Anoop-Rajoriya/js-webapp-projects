@@ -22,5 +22,5 @@ window.onload = () => {
 
 document.querySelector('.app-wraper button').addEventListener('click', e=> {
     console.log('click');
-    location.replace('http://127.0.0.1:5500/Quiz%20Time%20webapp/routs/app.html')
+    location.replace('https://anoop-rajoriya.github.io/js-webapp-projects/Quiz%20Time%20webapp/routs/app.html')
 })
