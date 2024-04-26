@@ -41,13 +41,23 @@ document.querySelector('.inner-progress').innerText = `${correctAns}/${totleQue}
 
 }
 
+const host = location.origin;
+const rout = host + location.pathname.replace('routs/result.html', '')
+
 document.querySelector('main button').addEventListener('click', e=> {
     localStorage.clear();
-    const host = location.origin;
-    const rout = host + location.pathname.replace('routs/result.html', '')
     console.log(rout);
     location.replace(rout)
 })
 
+const shareData = {
+    title: 'Quize Time game',
+    description: 'improve your coding skills.',
+    url: rout
+}
+
+document.querySelector('.share-elm .svg-container').addEventListener('click', e=> {
+    navigator.share(shareData)
+})
 
 
