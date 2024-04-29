@@ -1,0 +1,286 @@
+body {
+  margin: 0;
+  --background-color: #f3f3f3;
+  --componentBackground-color: #ffffff;
+  --primaryFont-color: #333;
+  --secondaryFont-color: #777;
+  --buttonHover-color: #f2f2f2;
+  --boxShadow-color: rgba(0, 0, 0, 0.1);
+}
+
+.app-wraper.dark-mode{
+    --background-color: #212E37;
+    --componentBackground-color: #434f5cb5;
+    --primaryFont-color: #e5e5e5;
+    --secondaryFont-color: #d7d7d7b0;
+    --buttonHover-color: #f2f2f22e;
+    --boxShadow-color: rgba(0, 0, 0, 0.1);
+}
+
+.app-wraper {
+  background-color: var(
+    --background-color
+  ); /* Set a default background color */
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease;
+  color: var(--primaryFont-color);
+}
+
+/* ********************************* code-divider header component ********************************* */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: var(
+    --componentBackground-color
+  ); /* Set a default background color */
+  box-shadow: 0 2px 4px var(--boxShadow-color); /* Add a subtle shadow */
+  margin-bottom: 20px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.mode-button {
+  padding: 10px 20px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 20px;
+  color: var(--primaryFont-color);
+}
+
+.mode-button img {
+  width: 30px;
+  margin-right: 5px;
+}
+
+.mode-button:hover {
+  background-color: var(
+    --buttonHover-color
+  ); /* Change background color on hover */
+}
+
+/* Media Query for responsive design */
+@media (max-width: 768px) {
+  .header {
+    /* flex-direction: column;  */
+    padding: 20px 6px;
+  }
+
+  .logo {
+    /* margin-bottom: 10px; */
+    font-size: 4.4vw;
+  }
+
+  .mode-button {
+    /* margin-top: 10px; */
+    font-size: 3.3vw;
+    /* margin-top: 0; */
+    /* background-color: lightcoral; */
+    /* padding: 0; */
+  }
+
+  .mode-button img {
+    width: 20px;
+  }
+}
+
+/* ********************************* code-divider navbar component ********************************* */
+
+.navbar {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 20px;
+}
+
+.search-container {
+  position: relative;
+  background-color: var(--componentBackground-color);
+  height: 60px;
+  width: 100%;
+  border-radius: 6px;
+  display: flex;
+  overflow: hidden;
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+  box-shadow: var(--boxShadow-color) 0px 3px 8px;
+}
+
+.search-container input[type="text"] {
+  padding: 8px;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: inherit;
+  padding-left: 50px;
+  cursor: default;
+  background-color: inherit;
+  color: inherit;
+}
+
+.search-icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--secondaryFont-color);
+  cursor: pointer;
+}
+
+.custom-dropdown {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.selected-option {
+  max-width: 300px;
+  height: 60px;
+  padding: 0 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 150px;
+  background-color: var(--componentBackground-color);
+  /* box-shadow: rgba(0, 0, 0, 0.164) 0px 3px 8px; */
+  box-shadow: var(--boxShadow-color) 0px 3px 8px;
+}
+
+.arrow {
+  margin-left: 5px;
+}
+
+.dropdown-content {
+  display: none;
+  margin-top: 12px;
+  width: 100%;
+  position: absolute;
+  background-color: var(--componentBackground-color);
+  /* box-shadow: rgba(0, 0, 0, 0.164) 0px 3px 8px; */
+  box-shadow: var(--boxShadow-color) 0px 3px 8px;
+  z-index: 1;
+  top: 60px;
+}
+
+.dropdown-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  /* background-color: #f2f2f2; */
+  background-color: var(--buttonHover-color);
+}
+
+/* Media Query for mobile */
+@media screen and (max-width: 586px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .search-container {
+    margin-bottom: 10px;
+    font-size: 3.2vw;
+    margin-bottom: 30px;
+  }
+}
+
+/* Media Query for tablet and larger */
+@media screen and (min-width: 586px) {
+  .navbar {
+    flex-direction: row;
+  }
+
+  .search-container {
+    margin-right: 10px;
+    max-width: 400px;
+  }
+}
+
+/* ********************************* code-divider card component ********************************* */
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-inline: auto;
+}
+
+.card {
+  min-width: 250px;
+  max-width: 340px;
+  height: max-content;
+  width: calc(30.33% - 20px); /* Adjust card width and margin */
+  margin: 20px;
+  background-color: var(--componentBackground-color);
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px var(--boxShadow-color);
+  overflow: hidden;
+}
+
+.card-top {
+  width: 100%;
+  height: max-content;
+  /*Set height for the image container */
+  overflow: hidden;
+}
+
+.card-top img {
+  width: 100%;
+  /* height: 100%; */
+  object-fit: cover;
+}
+
+.card-bottom {
+  padding: 20px;
+  /* background-color: lightcoral; */
+}
+
+.card-bottom h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--primaryFont-color);
+}
+
+.card-bottom p {
+  margin: 10px 0;
+  font-size: 14px;
+  color: var(--secondaryFont-color);
+}
+
+.card-bottom p span {
+  font-weight: 600;
+  color: var(--primaryFont-color);
+}
+
+@media screen and (max-width: 588px) {
+  .card-container {
+    justify-content: center;
+  }
+  .card {
+    width: calc(
+      50% - 20px
+    ); /* Adjust card width and margin for smaller screens */
+  }
+}

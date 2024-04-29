@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rest Countries</title>
+    <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="../styles/countrie.css" />
+    <script src="../scripts/countries.js" defer></script>
+    <script src="../scripts/dark-light-mode.js" defer></script>
+  </head>
+  <body>
+
+    <div class="app-wraper">
+      
+    <div class="header">
+      <div class="logo">where in the world?</div>
+      <button class="mode-button">
+        <img src="../assets/moon-line.svg" alt="" />Dark Mode
+      </button>
+    </div>
+
+    <div class="main-component">
+      <button class="back-button">
+        <img
+          src="../assets/chevron_left_FILL0_wght400_GRAD0_opsz24.svg"
+          alt=""
+        />
+        Back
+      </button>
+
+      <section class="content-section">
+        <div class="image-section">
+          <img
+            src=""
+            alt="Image"
+          />
+        </div>
+        <div class="text-section">
+          <h2 id="countrie-name">Countrie Title</h2>
+          <div class="countrie-details-section">
+            
+          </div>
+          <div class="border-countries-section">
+            <h3>Border countries</h3>
+            <div class="border-countries-lables">
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    </div>
+
+    <script>
+      const backButton = document.querySelector(".back-button")
+      backButton.addEventListener('click', e=> history.back())
+    </script>
+  </body>
+</html>
