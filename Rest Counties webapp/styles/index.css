@@ -10,9 +10,9 @@ body {
 
 .app-wraper.dark-mode{
     --background-color: #212E37;
-    --componentBackground-color: #434f5cb5;
+    --componentBackground-color: #434f5ceb;
     --primaryFont-color: #e5e5e5;
-    --secondaryFont-color: #d7d7d7b0;
+    --secondaryFont-color: #d7d7d7d3;
     --buttonHover-color: #f2f2f22e;
     --boxShadow-color: rgba(0, 0, 0, 0.1);
 }
@@ -26,6 +26,8 @@ body {
   flex-direction: column;
   transition: background-color 0.3s ease;
   color: var(--primaryFont-color);
+  min-height: 100vh;
+  max-width: 100vw;
 }
 
 /* ********************************* code-divider header component ********************************* */
@@ -135,8 +137,9 @@ body {
 }
 
 .search-icon {
+  width: 6%;
   position: absolute;
-  left: 18px;
+  left: 12px;
   top: 50%;
   transform: translateY(-50%);
   color: var(--secondaryFont-color);
@@ -167,6 +170,7 @@ body {
 }
 
 .arrow {
+  width: 12%;
   margin-left: 5px;
 }
 

@@ -51,6 +51,6 @@ function showData(countrie, index) {
 
 
     card.addEventListener("click", (e) => {
-        location.href = `./routs/countrie.html?countrieName=${countrie.name.common}`;
+        location.href = `./countrie.html?countrieName=${countrie.name.common}`;
       });
 }

@@ -1,5 +1,6 @@
 .main-component {
   max-width: 100vw;
+  /* width: 100%; */
   margin: 0 auto;
   padding: 20px 30px;
 }
@@ -21,6 +22,9 @@
   color: var(--primaryFont-color);
 }
 
+.back-button img {
+  width: 30px;
+}
 .back-button:active {
   /* background-color: rgba(226, 226, 226, 0.502); */
   background-color: var( --buttonHover-color);

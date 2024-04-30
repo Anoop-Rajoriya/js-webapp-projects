@@ -15,8 +15,6 @@ fetch(`https://restcountries.com/v3.1/name/${countrieName}?fullText=true`)
   .then(showData);
 
 function showData([countrie]) {
-    console.log(countrie);
-
   flageImage.src = countrie.flags.svg;
   countrieTitle.innerText = countrie.name.common;
 
@@ -35,8 +33,6 @@ function showData([countrie]) {
 
   for (const iterator of sectionDetails)
     countriesDetailsData[iterator] = countrie[iterator];
-
-  console.log(countriesDetailsData.borders);  
 
   const countriesDetailsHTML = `<section>
                                     <p><b>Native Name: </b>${
@@ -77,24 +73,24 @@ function showData([countrie]) {
 
   countriesDetailsElm.innerHTML = countriesDetailsHTML;
   // console.log(countriesDetailsHTML);
- try {
-  countriesDetailsData.borders.forEach((element) => {
-    // console.log(element);
-    fetch(`https://restcountries.com/v3.1/alpha/${element}`)
-      .then((res) => res.json())
-      .then((data) => {
-        const borderButton = document.createElement("button");
-        borderButton.innerText = data[0].name.common;
-        countrieBorderDetailsElm.appendChild(borderButton);
-        borderButton.addEventListener("click", (e) => {
-          location.href = `./countrie.html?countrieName=${data[0].name.common}`;
+  try {
+    countriesDetailsData.borders.forEach((element) => {
+      // console.log(element);
+      fetch(`https://restcountries.com/v3.1/alpha/${element}`)
+        .then((res) => res.json())
+        .then((data) => {
+          const borderButton = document.createElement("button");
+          borderButton.innerText = data[0].name.common;
+          countrieBorderDetailsElm.appendChild(borderButton);
+          borderButton.addEventListener("click", (e) => {
+            location.href = `./countrie.html?countrieName=${data[0].name.common}`;
+          });
         });
-      });
-  });
- } catch (error) {
-  const borderButton = document.createElement("button");
-        borderButton.innerText = "border not available!";
-        countrieBorderDetailsElm.appendChild(borderButton);
-        console.log("error: " + 'border not available.');
- }
+    });
+  } catch (error) {
+    const borderButton = document.createElement("button");
+    borderButton.innerText = "border not available!";
+    countrieBorderDetailsElm.appendChild(borderButton);
+    console.log("error: " + "border not available.");
+  }
 }
