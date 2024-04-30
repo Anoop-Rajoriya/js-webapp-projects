@@ -35,7 +35,7 @@ This repo contains my javascript practice projects. in this repo we will describ
 | Focus on Today | [focus-on-today](https://anoop-rajoriya.github.io/js-webapp-projects/Focus%20on%20Today%20webapp/) |
 | Foddie hamburger | [Foddie-hamburger](https://anoop-rajoriya.github.io/js-webapp-projects/Foddie%20hamburger/) |
 | Quiz Time Webapp | [Quiz-Time-Webapp](https://anoop-rajoriya.github.io/js-webapp-projects/Quiz%20Time%20webapp/) |
-| Rest Countries Webapp | [Quiz-Time-Webapp](https://anoop-rajoriya.github.io/js-webapp-projects/Rest%20Counties%20webapp/) |
+| Rest Countries Webapp | [Rest Countries Webapp](https://anoop-rajoriya.github.io/js-webapp-projects/Rest%20Counties%20webapp/) |
 
 ## author name
 - [Anoop Rajoriya]()
