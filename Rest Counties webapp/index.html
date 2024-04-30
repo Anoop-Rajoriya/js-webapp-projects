@@ -1,65 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./styles/index.css" />
-        <script src="./scripts/dark-light-mode.js" defer></script>
-        <script src="./scripts/index.js" defer></script>
-        <title>Rest Countries</title>
-    </head>
-    <body>
-        <div class="app-wraper">
-            <div class="header">
-                <div class="logo">where in the world?</div>
-                <button class="mode-button">
-                    <img src="assets/dark-mode-icon.svg" alt="" /> Dark Mode
-                </button>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <script src="./scripts/dark-light-mode.js" defer></script>
+    <script src="./scripts/index.js" defer></script>
+    <title>Rest Countries</title>
+  </head>
+  <body>
+    <div class="app-wraper">
+      <div class="header">
+        <div class="logo">where in the world?</div>
+        <button class="mode-button">
+          <img src="assets/dark-mode-icon.svg" alt="" /> Dark Mode
+        </button>
+      </div>
 
-            <div class="navbar">
-                <div class="search-container">
-                    <img
-                        class="search-icon"
-                        src="./assets/dark-mode-search-icon.svg"
-                        alt=""
-                    />
-                    <input type="text" placeholder="Search..." />
-                </div>
-                <div class="custom-dropdown">
-                    <div class="selected-option" onclick="toggleDropdown()">
-                        <span id="selected-option">Filter</span>
-                        <img
-                            class="arrow"
-                            src="./assets/down-arrow-light-mode.svg"
-                            alt=""
-                        />
-                    </div>
-                    <div class="dropdown-content" id="dropdown-content">
-                        <div
-                            class="dropdown-item"
-                            onclick="selectOption('option1')"
-                        >
-                            Option 1
-                        </div>
-                        <div
-                            class="dropdown-item"
-                            onclick="selectOption('option2')"
-                        >
-                            Option 2
-                        </div>
-                        <div
-                            class="dropdown-item"
-                            onclick="selectOption('option3')"
-                        >
-                            Option 3
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <main class="card-container">
-            </main>
+      <div class="navbar">
+        <div class="search-container">
+          <img
+            class="search-icon"
+            src="./assets/dark-mode-search-icon.svg"
+            alt=""
+          />
+          <input type="text" placeholder="Search..." />
         </div>
-    </body>
+        <div class="custom-dropdown">
+          <div class="selected-option" onclick="toggleDropdown()">
+            <span id="selected-option">Filter</span>
+            <img
+              class="arrow"
+              src="./assets/down-arrow-light-mode.svg"
+              alt=""
+            />
+          </div>
+          <div class="dropdown-content" id="dropdown-content">
+            <div class="dropdown-item" onclick="selectOption('Asia')">Asia</div>
+            <div class="dropdown-item" onclick="selectOption('Africa')">
+              Africa
+            </div>
+            <div class="dropdown-item" onclick="selectOption('Antarctica')">
+              Antarctica
+            </div>
+            <div class="dropdown-item" onclick="selectOption('Australia')">
+              Australia
+            </div>
+            <div class="dropdown-item" onclick="selectOption('Europe')">
+              Europe
+            </div>
+            <div class="dropdown-item" onclick="selectOption('North America')">
+              North America
+            </div>
+            <div class="dropdown-item" onclick="selectOption('South America')">
+              South America
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <main class="card-container"></main>
+    </div>
+  </body>
 </html>
